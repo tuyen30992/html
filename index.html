@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slideshow Tự Động</title>
+<style>
+/* Reset box-sizing cho tất cả các phần tử */
+* {box-sizing: border-box;}
+
+/* Thiết lập font chữ và loại bỏ margin mặc định cho body */
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+/* Ẩn các slide mặc định */
+.mySlides {display: none;}
+
+/* Căn chỉnh ảnh theo chiều dọc */
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px; /* Chiều rộng tối đa của slideshow */
+  position: relative; /* Đặt vị trí tương đối để định vị các nút điều hướng */
+  margin: auto; /* Căn giữa slideshow */
+}
+
+/* Nút điều hướng (trước & sau) */
+.prev, .next {
+  cursor: pointer; /* Thay đổi con trỏ thành biểu tượng bàn tay khi di chuột */
+  position: absolute; /* Đặt vị trí tuyệt đối trong container */
+  top: 50%; /* Căn giữa theo chiều dọc */
+  width: auto; /* Chiều rộng tự động */
+  padding: 16px; /* Khoảng đệm */
+  margin-top: -22px; /* Điều chỉnh vị trí để căn giữa chính xác */
+  color: white; /* Màu chữ */
+  font-weight: bold; /* Chữ in đậm */
+  font-size: 18px; /* Cỡ chữ */
+  transition: 0.6s ease; /* Hiệu ứng chuyển động mượt mà khi hover */
+  border-radius: 0 3px 3px 0; /* Bo tròn góc */
+  user-select: none; /* Ngăn chặn người dùng chọn văn bản */
+}
+
+/* Đặt nút "next" sang bên phải */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Thay đổi màu nền khi di chuột qua nút điều hướng */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8); /* Màu đen trong suốt */
+}
+
+/* Văn bản chú thích (caption) */
+.text {
+  color: #f2f2f2; /* Màu chữ */
+  font-size: 15px; /* Cỡ chữ */
+  padding: 8px 12px; /* Khoảng đệm */
+  position: absolute; /* Đặt vị trí tuyệt đối */
+  bottom: 8px; /* Cách đáy 8px */
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+  text-align: center; /* Căn giữa văn bản */
+}
+
+/* Số thứ tự slide (1/3, v.v.) */
+.numbertext {
+  color: #f2f2f2; /* Màu chữ */
+  font-size: 12px; /* Cỡ chữ */
+  padding: 8px 12px; /* Khoảng đệm */
+  position: absolute; /* Đặt vị trí tuyệt đối */
+  top: 0; /* Cách đỉnh 0px */
+}
+
+/* Các chấm/chỉ báo */
+.dot {
+  cursor: pointer; /* Thay đổi con trỏ thành biểu tượng bàn tay */
+  height: 15px; /* Chiều cao */
+  width: 15px; /* Chiều rộng */
+  margin: 0 2px; /* Khoảng cách giữa các chấm */
+  background-color: #bbb; /* Màu nền mặc định */
+  border-radius: 50%; /* Tạo hình tròn */
+  display: inline-block; /* Hiển thị trên cùng một dòng */
+  transition: background-color 0.6s ease; /* Hiệu ứng chuyển màu nền mượt mà */
+}
+
+/* Màu của chấm khi slide đang hoạt động hoặc khi di chuột qua */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Hiệu ứng mờ dần */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s; /* Thời lượng hiệu ứng */
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Điều chỉnh kích thước văn bản trên màn hình nhỏ hơn */
+@media only screen and (max-width: 300px) {
+  .prev, .next, .text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 2</div>
+    <a href="https://unica.vn/co-so-du-lieu-mysql-cho-nguoi-bat-dau?ref=102550&src=googlesite" target="_blank"><img src="img/banner/banner-01.png" style="width:100%"></a>
+    </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 2</div>
+    <a href="https://sanxuatvideoai.unica.vn/?ref=102550" target="_blank"><img src="img/banner/banner-02.png" style="width:100%"></a>
+    </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 9</div>
+    <a href="https://quaydungvideo.unica.vn/?ref=102550" target="_blank"><img src="img/banner/banner-03.png" style="width:100%"></a>
+    </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 9</div>
+    <a href="https://unica.vn/combo/xoa-mu-tin-hoc-van-phong-word-excel-powpoit?ref=102550" target="_blank"><img src="img/banner/banner-04.png" style="width:100%"></a>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 9</div>
+    <a href="https://unica.vn/combo/tiktok-ads-599k?ref=102550" target="_blank"><img src="img/banner/banner-05.png" style="width:100%"></a>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 9</div>
+    <a href="https://unica.vn/combo/tron-bo-guitar?ref=102550" target="_blank"><img src="img/banner/banner-06.png" style="width:100%"></a>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">7 / 9</div>
+    <a href="https://unica.vn/combo/cbo-5-khoa-chung-khoan?ref=102550" target="_blank"><img src="img/banner/banner-07.png" style="width:100%"></a>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">8 / 9</div>
+    <a href="https://unica.vn/autocad-trien-khai-ban-ve-noi-that?ref=102550" target="_blank"><img src="img/banner/banner-08.png" style="width:100%"></a>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">9 / 9</div>
+    <a href="https://unica.vn/combo/combo-thiet-ke-noi-ngoai-that-unica?ref=102550" target="_blank"><img src="img/banner/banner-09.png" style="width:100%"></a>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+</div>
+
+<script>
+let slideIndex = 0; // Bắt đầu từ slide 0 để dễ dàng xử lý với mảng
+showSlidesAuto(); // Gọi hàm hiển thị slide tự động khi tải trang
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n - 1); // Trừ 1 vì slideIndex bắt đầu từ 0
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+
+  // Xử lý khi n vượt quá giới hạn
+  if (n >= slides.length) {slideIndex = 0}
+  if (n < 0) {slideIndex = slides.length - 1}
+
+  // Ẩn tất cả các slide
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  // Loại bỏ lớp "active" khỏi tất cả các chấm
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  // Hiển thị slide hiện tại và thêm lớp "active" cho chấm tương ứng
+  slides[slideIndex].style.display = "block";
+  dots[slideIndex].className += " active";
+}
+
+function showSlidesAuto() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+
+  // Ẩn tất cả các slide
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  // Tăng slideIndex lên 1
+  slideIndex++;
+
+  // Nếu slideIndex vượt quá số lượng slide, quay lại slide đầu tiên
+  if (slideIndex > slides.length) {slideIndex = 1}
+
+  // Loại bỏ lớp "active" khỏi tất cả các chấm
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  // Hiển thị slide hiện tại và thêm lớp "active" cho chấm tương ứng
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+
+  // Tự động chuyển slide sau mỗi 3 giây (3000ms)
+  setTimeout(showSlidesAuto, 3000);
+}
+</script>
+
+</body>
+</html>

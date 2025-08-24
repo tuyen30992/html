@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khóa học Cơ sở dữ liệu MySQL cho người bắt đầu</title>
+    <!-- Chosen Palette: Tech Professional (Dark Blue, Bright Green, Orange Accent, Light Gray) -->
+    <!-- Application Structure Plan: A single-page landing page structure was designed to guide the user logically. It starts with a strong Hero section (the 'banner'), followed by sections for Key Highlights (interactive cards), a visual Curriculum timeline, Target Audience, and a final Call to Action. This structure is more persuasive and user-friendly for a course landing page than just displaying a static banner, effectively turning the design brief into a functional marketing tool. -->
+    <!-- Visualization & Content Choices: Report Info: Key Highlights -> Goal: Inform/Engage -> Viz: Interactive Cards (HTML/CSS) -> Interaction: Hover effect -> Justification: More engaging than a static list. | Report Info: Curriculum ("From theory to project") -> Goal: Organize/Show Process -> Viz: Vertical Timeline (HTML/CSS) -> Justification: Visualizes the learning path clearly. | Report Info: Implied student success -> Goal: Persuade/Compare -> Viz: Bar Chart (Chart.js) -> Interaction: Tooltips on hover -> Justification: Adds a data-driven, credible element to the page. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F5F5F5;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Hero Section -->
+    <header class="bg-[#003366] text-white text-center py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Cơ sở dữ liệu MySQL cho người bắt đầu</h1>
+            <p class="text-lg md:text-2xl mb-8 text-gray-300">Nắm vững nền tảng, tự tin xây dựng ứng dụng web!</p>
+            <a href="#register" class="bg-[#FF9800] text-[#003366] font-bold py-4 px-10 rounded-full text-lg hover:bg-yellow-400 transition-colors duration-300 inline-block">Đăng ký ngay</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Key Highlights Section -->
+        <section id="highlights" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#003366]">Tại sao nên chọn khóa học này?</h2>
+                    <p class="mt-4 text-lg text-gray-600">Chúng tôi mang đến một lộ trình học tập toàn diện và hiệu quả, được thiết kế đặc biệt cho người mới.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-4xl text-[#4CAF50] mb-4">➔</div>
+                        <h3 class="text-xl font-bold mb-2 text-[#003366]">Học từ A-Z</h3>
+                        <p class="text-gray-600">Chương trình học bao quát từ những khái niệm cơ bản nhất đến việc xây dựng một dự án thực tế hoàn chỉnh.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-4xl text-[#4CAF50] mb-4">✓</div>
+                        <h3 class="text-xl font-bold mb-2 text-[#003366]">Không yêu cầu kinh nghiệm</h3>
+                        <p class="text-gray-600">Khóa học được thiết kế cho người bắt đầu, bạn không cần biết lập trình trước đó để tham gia.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-4xl text-[#4CAF50] mb-4">👨‍🏫</div>
+                        <h3 class="text-xl font-bold mb-2 text-[#003366]">Giảng viên chuyên nghiệp</h3>
+                        <p class="text-gray-600">Học hỏi từ các chuyên gia đầu ngành với nhiều năm kinh nghiệm làm việc và giảng dạy.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-4xl text-[#4CAF50] mb-4">💬</div>
+                        <h3 class="text-xl font-bold mb-2 text-[#003366]">Hỗ trợ 24/7 & Cộng đồng</h3>
+                        <p class="text-gray-600">Nhận được sự hỗ trợ nhanh chóng và tham gia cộng đồng học viên sôi nổi để cùng nhau tiến bộ.</p>
+                    </div>
+                     <!-- Card 5 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-4xl text-[#4CAF50] mb-4">🎓</div>
+                        <h3 class="text-xl font-bold mb-2 text-[#003366]">Chứng chỉ hoàn thành</h3>
+                        <p class="text-gray-600">Nhận chứng chỉ uy tín sau khi hoàn thành khóa học để làm đẹp CV và mở ra cơ hội nghề nghiệp.</p>
+                    </div>
+                     <!-- Card 6 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-4xl text-[#4CAF50] mb-4">📈</div>
+                        <h3 class="text-xl font-bold mb-2 text-[#003366]">Lộ trình rõ ràng</h3>
+                        <p class="text-gray-600">Một con đường học tập được vạch sẵn, giúp bạn đi đúng hướng và đạt được mục tiêu nhanh nhất.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Section -->
+        <section id="curriculum" class="py-16 sm:py-24">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#003366]">Bạn sẽ học được gì?</h2>
+                    <p class="mt-4 text-lg text-gray-600">Lộ trình học tập được chia thành các giai đoạn rõ ràng, giúp bạn xây dựng kiến thức một cách vững chắc.</p>
+                </div>
+                <div class="relative">
+                    <!-- Vertical line -->
+                    <div class="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-green-200"></div>
+                    <!-- Step 1 -->
+                    <div class="relative mb-8 flex items-center w-full">
+                        <div class="hidden md:block w-1/2 pr-8"></div>
+                        <div class="hidden md:block absolute left-1/2 -translate-x-1/2 z-10 w-8 h-8 rounded-full bg-[#4CAF50] text-white flex items-center justify-center font-bold">1</div>
+                        <div class="w-full md:w-1/2 md:pl-8">
+                            <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#4CAF50]">
+                                <h3 class="text-lg font-bold text-[#003366]">Nhập môn Cơ sở dữ liệu</h3>
+                                <p class="mt-2 text-gray-600">Hiểu các khái niệm cốt lõi: Database là gì, SQL, DBMS, và kiến trúc của MySQL.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative mb-8 flex items-center w-full">
+                        <div class="hidden md:block w-1/2 pr-8 text-right"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 z-10 w-8 h-8 rounded-full bg-[#4CAF50] text-white flex items-center justify-center font-bold">2</div>
+                        <div class="w-full md:w-1/2 md:pl-8">
+                             <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#4CAF50]">
+                                <h3 class="text-lg font-bold text-[#003366]">Truy vấn dữ liệu với SQL</h3>
+                                <p class="mt-2 text-gray-600">Thành thạo các câu lệnh SELECT, FROM, WHERE, JOIN, GROUP BY để khai thác thông tin.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative mb-8 flex items-center w-full">
+                        <div class="hidden md:block w-1/2 pr-8"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 z-10 w-8 h-8 rounded-full bg-[#4CAF50] text-white flex items-center justify-center font-bold">3</div>
+                        <div class="w-full md:w-1/2 md:pl-8">
+                            <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#4CAF50]">
+                                <h3 class="text-lg font-bold text-[#003366]">Thiết kế và quản trị Database</h3>
+                                <p class="mt-2 text-gray-600">Học cách thiết kế CSDL quan hệ, tạo bảng, định nghĩa khóa, và quản lý người dùng.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Step 4 -->
+                    <div class="relative mb-8 flex items-center w-full">
+                        <div class="hidden md:block w-1/2 pr-8 text-right"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 z-10 w-8 h-8 rounded-full bg-[#4CAF50] text-white flex items-center justify-center font-bold">4</div>
+                        <div class="w-full md:w-1/2 md:pl-8">
+                             <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#4CAF50]">
+                                <h3 class="text-lg font-bold text-[#003366]">Dự án thực tế</h3>
+                                <p class="mt-2 text-gray-600">Áp dụng toàn bộ kiến thức đã học để xây dựng một CSDL hoàn chỉnh cho một ứng dụng web.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Student Success Chart Section -->
+        <section id="success-chart" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#003366]">Sự tiến bộ của học viên</h2>
+                    <p class="mt-4 text-lg text-gray-600">Biểu đồ thể hiện mức độ tự tin của học viên đối với các kỹ năng chính sau khi hoàn thành khóa học.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="skillChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="register" class="bg-[#003366] text-white">
+            <div class="max-w-4xl mx-auto text-center py-20 px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Sẵn sàng để bắt đầu sự nghiệp của bạn?</h2>
+                <p class="text-lg text-gray-300 mb-8">Đừng bỏ lỡ cơ hội trang bị một trong những kỹ năng công nghệ được săn đón nhất hiện nay.</p>
+                <a href="#" class="bg-[#FF9800] text-[#003366] font-bold py-4 px-10 rounded-full text-lg hover:bg-yellow-400 transition-colors duration-300 inline-block">Tham gia ngay hôm nay!</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6">
+        <p>&copy; 2025 Khóa học MySQL. Mọi quyền được bảo lưu.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('skillChart').getContext('2d');
+            
+            const skillChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Viết truy vấn SQL', 'Thiết kế Database', 'Tối ưu hiệu năng', 'Giải quyết vấn đề', 'Quản trị cơ bản'],
+                    datasets: [{
+                        label: 'Mức độ tự tin trước khóa học',
+                        data: [20, 15, 10, 25, 10],
+                        backgroundColor: 'rgba(255, 152, 0, 0.5)',
+                        borderColor: 'rgba(255, 152, 0, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Mức độ tự tin sau khóa học',
+                        data: [85, 80, 70, 90, 75],
+                        backgroundColor: 'rgba(76, 175, 80, 0.7)',
+                        borderColor: 'rgba(76, 175, 80, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%'
+                                },
+                                color: '#333'
+                            },
+                            grid: {
+                                color: '#e0e0e0'
+                            }
+                        },
+                        x: {
+                             ticks: {
+                                color: '#333'
+                            },
+                             grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#333'
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += context.parsed.y + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Khóa học MySQL</title>
+    <!-- Chosen Palette: Tech Professional (Dark Blue, Bright Green, Orange Accent, Light Gray) -->
+    <!-- Application Structure Plan: This HTML represents a static banner image concept, designed to fit the specified dimensions (1440x565px). It organizes content hierarchically: main title, sub-headline, key features, and a call to action, all within a visually appealing layout that adheres to the provided color scheme and font suggestions. This structure is chosen to maximize visual impact and readability for a fixed-size advertisement. -->
+    <!-- Visualization & Content Choices: Report Info: Overall Banner Content -> Goal: Advertise/Inform -> Viz: Static HTML Layout -> Interaction: None (as it's a fixed image concept) -> Justification: Directly fulfills the request for a banner image concept. Icons are represented by Unicode characters. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #F5F5F5;
+            margin: 0;
+            overflow: hidden;
+        }
+        .banner-container {
+            width: 1440px;
+            height: 565px;
+            background-color: #003366;
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 40px;
+            box-sizing: border-box;
+            background-image: linear-gradient(45deg, rgba(0, 51, 102, 0.95) 0%, rgba(0, 51, 102, 0.8) 100%),
+                              url('https://placehold.co/1440x565/002244/FFFFFF?text=MySQL+Background'); /* Placeholder for subtle tech background */
+            background-size: cover;
+            background-position: center;
+        }
+        .mysql-logo-placeholder {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #FF9800;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .icon-text-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #E0E0E0;
+        }
+        .icon-text-group span {
+            margin-right: 10px;
+            color: #4CAF50;
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner-container">
+        <div class="mysql-logo-placeholder">MySQL</div>
+
+        <div class="text-center max-w-4xl mx-auto">
+            <h1 class="text-6xl font-extrabold mb-4 leading-tight" style="font-family: 'Poppins', sans-serif;">Cơ sở dữ liệu MySQL cho người bắt đầu</h1>
+            <p class="text-2xl mb-12 text-gray-300" style="font-family: 'Open Sans', sans-serif;">Nắm vững nền tảng, tự tin xây dựng ứng dụng web!</p>
+
+            <div class="grid grid-cols-2 gap-y-4 gap-x-8 mb-16">
+                <div class="icon-text-group justify-end">
+                    <span>➔</span> Học từ A-Z: Lý thuyết & Thực hành dự án
+                </div>
+                <div class="icon-text-group justify-start">
+                    <span>✓</span> Không yêu cầu kinh nghiệm lập trình
+                </div>
+                <div class="icon-text-group justify-end">
+                    <span>👨‍🏫</span> Giảng viên chuyên nghiệp, giàu kinh nghiệm
+                </div>
+                <div class="icon-text-group justify-start">
+                    <span>💬</span> Hỗ trợ 24/7 & Cộng đồng học tập sôi nổi
+                </div>
+            </div>
+
+            <a href="#" class="bg-[#FF9800] text-[#003366] font-bold py-5 px-12 rounded-full text-2xl hover:bg-yellow-400 transition-colors duration-300 inline-block shadow-lg">
+                Đăng ký ngay!
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
